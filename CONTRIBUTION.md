@@ -45,10 +45,17 @@ Your help is what makes open source great.
    ```
 
 7. **Open a Pull Request (PR)**
+
    - Go to the original repository on GitHub.
    - Make sure PR should be to dev branch only.
    - Click **"Compare & Pull Request"**.
    - Provide a clear title and description of your changes.
+
+8. **Update your Repo First**
+
+   ```bash
+   git pull origin main
+   ```
 
 ---
 
