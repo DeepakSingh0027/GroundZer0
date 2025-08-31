@@ -1,0 +1,38 @@
+.shiny-text {
+  color: #00000062;
+  background: linear-gradient(
+    120deg,
+    rgba(0, 0, 0, 0.593) 40%,
+    rgb(255, 255, 255) 50%,
+    rgba(0, 0, 0, 0.536) 60%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline-block;
+  animation: shine 5s linear infinite;
+}
+
+.shiny-text-dark {
+  color: #ffffff50;
+  background: linear-gradient(
+    120deg,
+    rgba(120, 119, 119, 0.388) 40%,
+    rgb(0, 0, 0) 50%,
+    rgba(103, 102, 102, 0.533) 60%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline-block;
+  animation: shine 5s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: -100%;
+  }
+}
