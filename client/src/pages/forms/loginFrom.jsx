@@ -85,7 +85,7 @@ const LoginForm = ({
         className="w-full bg-white/20 backdrop-blur-sm border border-white/20 hover:bg-white/30 text-white font-medium rounded-2xl h-14 mt-8 text-base transition-all duration-300 transform hover:shadow-lg active:scale-[0.98]"
         disabled={isLoading}
       >
-        {isLoading ? "Signing in..." : "Sign in"}
+        {isLoading ? "Logging in..." : "Log in"}
       </button>
     </form>
   );
