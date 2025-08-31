@@ -38,9 +38,9 @@ const SignUp = () => {
     setActiveTab("signup");
   };
 
-  const handleSignin = () => {
-    console.log("Signin button clicked");
-    setActiveTab("signin");
+  const handlelogin = () => {
+    console.log("login button clicked");
+    setActiveTab("login");
   };
 
   useEffect(() => {
@@ -87,7 +87,7 @@ const SignUp = () => {
         <div className="w-full max-w-md mx-auto mb-15">
           <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-[32px] p-8 shadow-2xl transform transition-all duration-300 hover:shadow-3xl">
             <div className="items-center justify-between mb-8">
-              <div className="flex bg-black/30 backdrop-blur-sm rounded-full p-1 border border-white/10 w-50 mb-5">
+              <div className="flex bg-black/30 backdrop-blur-sm rounded-full p-1 border border-white/10 w-49 mb-5">
                 <button
                   type="button"
                   onClick={handleSignup}
@@ -101,14 +101,14 @@ const SignUp = () => {
                 </button>
                 <button
                   type="button"
-                  onClick={handleSignin}
+                  onClick={handlelogin}
                   className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 transform ${
-                    activeTab === "signin"
+                    activeTab === "login"
                       ? "bg-white/20 backdrop-blur-sm text-white border border-white/20 shadow-lg"
                       : "text-white/60 hover:text-white hover:bg-white/5"
                   }`}
                 >
-                  Sign in
+                  Log in
                 </button>
               </div>
               <h1 className="text-3xl font-normal text-white mb-6 transition-all duration-300">
@@ -141,7 +141,7 @@ const SignUp = () => {
                 {/* Login form */}
                 <div
                   className={`transition-all duration-500 ease-in-out transform ${
-                    activeTab === "signin"
+                    activeTab === "login"
                       ? "translate-x-0 opacity-100"
                       : "translate-x-full opacity-0 absolute inset-0"
                   }`}
@@ -161,6 +161,18 @@ const SignUp = () => {
                 </div>
               </div>
             </div>
+            <div className="flex items-center my-8">
+              <div className="flex-1 h-px bg-white/10"></div>
+              <span className="px-4 text-white/40 text-sm font-medium">
+                {activeTab === "signup"
+                  ? "BY CREATING AN ACCOUNT"
+                  : "BY LOGGING IN"}
+              </span>
+              <div className="flex-1 h-px bg-white/10"></div>
+            </div>
+            <p className="text-center text-white/40 text-sm mt-8">
+              you agree to our Terms & Service
+            </p>
           </div>
         </div>
       </AnimatedDiv>
