@@ -10,16 +10,27 @@ import {
   Moon,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { userContext } from "../context/userContext";
 
 const Header = () => {
   const { theme, setTheme } = useContext(themeContext);
+  const {
+    isLogin,
+    setLogin,
+    userName,
+    setUserName,
+    userId,
+    setUserId,
+    subscription,
+    setSubscription,
+  } = useContext(userContext);
   const [isOpen, setIsOpen] = useState(false);
 
   const isDark = theme === 1;
   const nextTheme = isDark ? 0 : 1;
 
   const links = [
-    { href: "/blogs", label: "Blogs", icon: <Briefcase className="h-4 w-4" /> },
+    { href: "/chat", label: "Chats", icon: <Briefcase className="h-4 w-4" /> },
     { href: "/faq", label: "FAQ", icon: <HelpCircle className="h-4 w-4" /> },
     {
       href: "/trending",
@@ -55,7 +66,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 p-4 mt-5 h-full pointer-events-none`}
+      className={`fixed top-0 left-0 w-full z-50 p-4 mt-3 h-full pointer-events-none`}
     >
       <div className="absolute bottom-10 left-6 pointer-events-auto">
         <ThemeToggle />
@@ -146,17 +157,31 @@ const Header = () => {
 
             {/* CTA */}
             <div className="mt-4 space-y-2">
-              <Link
-                to="/"
-                className={`block w-full text-center font-medium rounded-lg px-6 py-2.5 transition-all
+              {!isLogin && (
+                <Link
+                  to="/"
+                  className={`block w-full text-center font-medium rounded-lg px-6 py-2.5 transition-all
           ${
             isDark
               ? "hover:bg-white/10 hover:text-purple-300 text-shadow-white hover:shadow-md hover:scale-[1.02]"
               : "hover:bg-black/10 hover:text-purple-500 text-shadow-black hover:shadow-md hover:scale-[1.02]"
           }`}
-              >
-                SignUp / Login
-              </Link>
+                >
+                  SignUp / Login
+                </Link>
+              )}
+              {isLogin && (
+                <Link
+                  className={`block w-full text-center font-medium rounded-lg px-6 py-2.5 transition-all
+          ${
+            isDark
+              ? "hover:bg-white/10 hover:text-purple-300 text-shadow-white hover:shadow-md hover:scale-[1.02]"
+              : "hover:bg-black/10 hover:text-purple-500 text-shadow-black hover:shadow-md hover:scale-[1.02]"
+          }`}
+                >
+                  {userName[0]}
+                </Link>
+              )}
             </div>
           </div>
         )}
