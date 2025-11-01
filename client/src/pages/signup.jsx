@@ -84,10 +84,10 @@ const SignUp = () => {
         </h1>
       </div>
       <AnimatedDiv>
-        <div className="w-full max-w-md mx-auto mb-15">
+        <div className="w-full max-w-md mx-auto mb-10">
           <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-[32px] p-8 shadow-2xl transform transition-all duration-300 hover:shadow-3xl">
             <div className="items-center justify-between mb-8">
-              <div className="flex bg-black/30 backdrop-blur-sm rounded-full p-1 border border-white/10 w-49 mb-5">
+              <div className="flex bg-black/30 backdrop-blur-sm rounded-full p-1 border border-white/10 w-49 mb-3">
                 <button
                   type="button"
                   onClick={handleSignup}
