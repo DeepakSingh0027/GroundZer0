@@ -6,6 +6,8 @@ import { UserProvider } from "./context/userContext.jsx";
 import "./App.css";
 import Header from "./headers/header.jsx";
 import SignUp from "./pages/signup.jsx";
+import Chat from "./pages/chat.jsx";
+import GlobalBackground from "./components/background/GlobalBackground.jsx";
 
 function App() {
   return (
@@ -18,6 +20,14 @@ function App() {
               <>
                 <Header />
                 <SignUp />
+              </>
+            }
+          />
+          <Route
+            path="/chat"
+            element={
+              <>
+                <Chat />
               </>
             }
           />
