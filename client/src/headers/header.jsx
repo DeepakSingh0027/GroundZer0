@@ -1,16 +1,9 @@
 import React, { useContext, useState, useEffect } from "react";
 import { themeContext } from "./../context/themeContext";
-import {
-  Menu,
-  Briefcase,
-  HelpCircle,
-  FileText,
-  Info,
-  Sun,
-  Moon,
-} from "lucide-react";
+import { Menu, Briefcase, HelpCircle, FileText, Info } from "lucide-react";
 import { Link } from "react-router-dom";
 import { userContext } from "../context/userContext";
+import ThemeToggle from "./themeToggle.jsx";
 
 const Header = () => {
   const { theme, setTheme } = useContext(themeContext);
@@ -40,37 +33,12 @@ const Header = () => {
     { href: "/about", label: "About", icon: <Info className="h-4 w-4" /> },
   ];
 
-  useEffect(() => {
-    if (isDark) {
-      document.body.style.backgroundColor = "#060010";
-    } else {
-      document.body.style.backgroundColor = "#fdf6e3";
-    }
-  }, [isDark]);
-
-  const ThemeToggle = () => (
-    <button
-      type="button"
-      aria-label="Toggle theme"
-      onClick={() => setTheme(nextTheme)}
-      className={`flex items-center gap-2 bg-white/5 rounded-full shadow-[0_0_0_0.5px_rgba(255,255,255,0.3)] backdrop-blur-lg px-3 py-1.5 text-xs ${
-        isDark
-          ? "text-gray-200 hover:bg-gray-900 hover:text-purple-300"
-          : "text-gray-800 hover:bg-gray-200 hover:text-purple-400"
-      } transition-colors`}
-    >
-      {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-      <span className="hidden sm:inline">{isDark ? "Light" : "Dark"} mode</span>
-    </button>
-  );
-
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 p-4 mt-3 h-full pointer-events-none`}
     >
-      <div className="absolute bottom-10 left-6 pointer-events-auto">
-        <ThemeToggle />
-      </div>
+      <ThemeToggle />
+
       <div className="container mx-auto max-w-4xl pointer-events-auto">
         <div className="flex bg-white/5 h-14 items-center justify-between px-6 rounded-full shadow-[0_0_0_0.5px_rgba(255,255,255,0.3)] backdrop-blur-lg">
           {/* Brand Logo */}

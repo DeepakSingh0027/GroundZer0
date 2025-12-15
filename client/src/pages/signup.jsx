@@ -1,11 +1,10 @@
-import React from "react";
-import LightRays from "./../components/ui/LightRays";
 import { themeContext } from "./../context/themeContext.jsx";
 import { useContext, useState, useEffect } from "react";
 import SignUpForm from "./forms/signupForm.jsx";
 import LoginForm from "./forms/loginFrom.jsx";
 import "./signup.css";
 import AnimatedDiv from "./../components/ui/animateDiv.jsx";
+import GlobalBackground from "./../components/background/GlobalBackground.jsx";
 
 const SignUp = () => {
   const { theme, setTheme } = useContext(themeContext);
@@ -48,20 +47,7 @@ const SignUp = () => {
   }, [activeTab]);
   return (
     <>
-      <div className="w-[100%] h-[100%] fixed -z-10">
-        <LightRays
-          raysOrigin="top-center"
-          raysColor={`${theme === 1 ? "#ffffff" : "#000000"}`}
-          raysSpeed={1.5}
-          lightSpread={0.8}
-          rayLength={1.2}
-          followMouse={true}
-          mouseInfluence={0.1}
-          noiseAmount={0.1}
-          distortion={0.05}
-          className="custom-rays"
-        />
-      </div>
+      <GlobalBackground />
       <div className="relative z-10 flex justify-center items-center h-screen">
         <h1
           className={`text-3xl font-bold text-center align-middle ${
